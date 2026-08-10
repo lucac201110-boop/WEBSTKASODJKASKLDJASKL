@@ -1,0 +1,31 @@
+import type { Metadata } from "next";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+
+export const metadata: Metadata = { title: "Privacy Policy" };
+
+export default function PrivacyPage() {
+  return (
+    <>
+      <Navbar />
+      <main className="mx-auto max-w-2xl px-6 pb-28 pt-40">
+        <h1 className="text-3xl font-bold tracking-tight">Privacy Policy</h1>
+        <p className="mt-4 text-[13px] text-ink-secondary">Last updated: {new Date().toLocaleDateString("en-US", { month: "long", year: "numeric" })}</p>
+        <div className="mt-10 space-y-6 text-[14.5px] leading-relaxed text-ink-secondary">
+          <p>
+            Replace this page with your actual privacy policy before launch.
+            At minimum, disclose what&apos;s collected during login (Discord
+            account info, Minecraft username, device/hardware identifiers,
+            IP address), how long it&apos;s retained, and who can access it.
+          </p>
+          <p>
+            Device and session data collected at login is used solely for
+            license enforcement and account security, and is not shared with
+            third parties.
+          </p>
+        </div>
+      </main>
+      <Footer />
+    </>
+  );
+}
