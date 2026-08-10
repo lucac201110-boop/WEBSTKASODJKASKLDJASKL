@@ -1,0 +1,60 @@
+export const navLinks = [
+  { label: "Features", href: "#features" },
+  { label: "Download", href: "#download" },
+  { label: "Changelog", href: "#changelog" },
+  { label: "Vouches", href: "#vouches" },
+  { label: "FAQ", href: "#faq" },
+];
+
+// Kubeb Client's actual real feature set - matches what's in the mod's
+// source, not invented marketing copy. Keep this in sync with the mod.
+export const features = [
+  {
+    title: "Module system",
+    description: "A sidebar of module categories (Combat, Movement, Render, Misc, Client) with toggleable modules inside.",
+    icon: "LayoutGrid",
+  },
+  {
+    title: "Accent color themes",
+    description: "Pick a custom accent color for the whole interface, or turn on rainbow mode for it to cycle automatically.",
+    icon: "Palette",
+  },
+  {
+    title: "Per-module keybinds",
+    description: "Middle-click any module to capture a new keybind for it on the spot.",
+    icon: "Keyboard",
+  },
+  {
+    title: "License-protected login",
+    description: "The client won't open without a valid, verified license - locked to your account and your device.",
+    icon: "ShieldCheck",
+  },
+];
+
+export const faqs = [
+  {
+    question: "How do I install Kubeb Client?",
+    answer:
+      "Log in with Discord, verify your account, and once you have an active license the Download button unlocks. Drop the jar into your mods folder alongside Fabric Loader and Fabric API for 1.21.4.",
+  },
+  {
+    question: "Is it free?",
+    answer:
+      "Access is license-based, tied to your Discord account. Check the Discord server for current access details.",
+  },
+  {
+    question: "Which Minecraft version is supported?",
+    answer: "1.21.4 on Fabric, currently the only supported version.",
+  },
+  {
+    question: "How do updates work?",
+    answer:
+      "New builds are announced in Discord and listed in the Changelog section below. Re-download when a new version is out.",
+  },
+  {
+    question: "Where can I get support?",
+    answer: "The Discord server is the fastest way to reach the team.",
+  },
+];
+
+export const discordInviteUrl = "https://discord.gg/VVrjCrB5nJ";
