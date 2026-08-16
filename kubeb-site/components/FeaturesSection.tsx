@@ -1,0 +1,48 @@
+"use client";
+
+import { motion } from "framer-motion";
+import * as Icons from "lucide-react";
+import { features } from "@/lib/data";
+import SectionReveal from "@/components/SectionReveal";
+
+export default function FeaturesSection() {
+  return (
+    <section id="features" className="py-28">
+      <div className="mx-auto max-w-6xl px-6">
+        <SectionReveal className="mx-auto mb-16 max-w-xl text-center">
+          <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-accent">Features</span>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+            Built for players who notice the details
+          </h2>
+          <p className="mt-4 text-[15px] leading-relaxed text-ink-secondary">
+            Every part of Kubeb Client is designed to feel intentional — not
+            bolted on.
+          </p>
+        </SectionReveal>
+
+        <div className="mx-auto grid max-w-3xl grid-cols-1 gap-4 sm:grid-cols-2">
+          {features.map((f, i) => {
+            const Icon = Icons[f.icon as keyof typeof Icons] as Icons.LucideIcon;
+            return (
+              <SectionReveal key={f.title} delay={(i % 2) * 0.08}>
+                <motion.div
+                  whileHover={{ y: -4 }}
+                  transition={{ duration: 0.25, ease: "easeOut" }}
+                  className="group h-full rounded-2xl border border-line bg-card p-6 transition-colors hover:border-accent/30 hover:bg-white/[0.06]"
+                >
+                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl border border-line bg-white/[0.03] text-accent transition-colors group-hover:border-accent/40">
+                    <Icon size={18} strokeWidth={1.75} />
+                  </div>
+                  <h3 className="text-[15px] font-semibold">{f.title}</h3>
+                  <p className="mt-2 text-[13.5px] leading-relaxed text-ink-secondary">
+                    {f.description}
+                  </p>
+                </motion.div>
+              </SectionReveal>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
