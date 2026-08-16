@@ -1,0 +1,3 @@
+"use client";
+import { useEffect,useRef,useState } from "react"; import { motion,useInView,animate } from "framer-motion";
+export default function AnimatedCounter({value,suffix=""}:{value:number;suffix?:string}){const ref=useRef<HTMLSpanElement>(null);const inView=useInView(ref,{once:true,margin:"-40px"});const [display,setDisplay]=useState(0);useEffect(()=>{if(!inView)return;const c=animate(0,value,{duration:1.8,ease:[.16,1,.3,1],onUpdate:v=>setDisplay(Math.round(v))});return()=>c.stop()},[inView,value]);return <motion.span ref={ref} className="font-mono tabular-nums">{display.toLocaleString()}{suffix}</motion.span>}
