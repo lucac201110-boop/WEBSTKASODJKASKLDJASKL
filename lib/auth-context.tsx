@@ -1,5 +1,0 @@
-"use client";
-import { createContext,useCallback,useContext,useEffect,useState,ReactNode } from "react"; import { getAccount,loginWithDiscordUrl,type Account } from "@/lib/api";
-type AuthContextValue={account:Account|null;loading:boolean;refresh:()=>Promise<void>;login:()=>void;logout:()=>Promise<void>};const AuthContext=createContext<AuthContextValue|null>(null);
-export function AuthProvider({children}:{children:ReactNode}){const [account,setAccount]=useState<Account|null>(null);const [loading,setLoading]=useState(true);const refresh=useCallback(async()=>{setLoading(true);setAccount(await getAccount());setLoading(false)},[]);useEffect(()=>{refresh()},[refresh]);function login(){window.location.href=loginWithDiscordUrl()}async function logout(){await fetch("/api/auth/logout",{method:"POST"});setAccount(null)}return <AuthContext.Provider value={{account,loading,refresh,login,logout}}>{children}</AuthContext.Provider>}
-export function useAuth(){const ctx=useContext(AuthContext);if(!ctx)throw new Error("useAuth must be used within AuthProvider");return ctx}
