@@ -1,2 +1,0 @@
-import type { MetadataRoute } from "next";
-export default function sitemap(): MetadataRoute.Sitemap { const base="https://kubebclient.com"; return [{url:`${base}/`,lastModified:new Date(),changeFrequency:"weekly",priority:1},{url:`${base}/#features`,lastModified:new Date(),changeFrequency:"monthly",priority:.7},{url:`${base}/#download`,lastModified:new Date(),changeFrequency:"weekly",priority:.9},{url:`${base}/#changelog`,lastModified:new Date(),changeFrequency:"weekly",priority:.6},{url:`${base}/#faq`,lastModified:new Date(),changeFrequency:"monthly",priority:.5}]; }
